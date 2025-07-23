@@ -1,0 +1,42 @@
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="/estilos/Estilo.css" type="text/css">
+            <link rel="shortcut icon" href="/imagenes/uam6.png">
+            <title>Inicio de sesión</title>
+        </head>
+        <body>
+            
+            
+            <header>
+                <div class="logo-principal">
+            <a href="/index.html"><img src="/imagenes/uam.svg" width="300" height="70"></a>   
+                </div>
+            </header>
+            <main clas="contenedor" >
+                <h1 class="titulo">Iniciar sesion</h1>
+                <form class="formularioLogin sombra-login" method="POST" action="/login" autocomplete="off">
+                <fieldset>
+                    <div class="instruccion">
+                        <legend>Ingrese los siguientes datos</legend>
+                    </div>
+                    <div class="campo">
+                        <p>Nombre usuario </p>
+                        <input  class="caja" name="txtuser" type="text" placeholder="Nombre usuario">
+                    </div>
+                    <div class="campo">
+                        <p>Contraseña: </p>
+                        <input  class="caja" name="txtpass" type="password" placeholder="Contraseña">
+                    </div>
+                    <div class="formulario-boton">
+                        <input type="submit" name="accion" value="Ingresar" class="boton-enviar">
+                    </div>  
+                </fieldset>
+                </form>
+                
+            </main>
+            
+            </body>
+    </html>

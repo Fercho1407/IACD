@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registrar Proyecto de Investigación</title>
+  <link rel="stylesheet" href="/estilos/Estilos.css">
+  <link rel="shortcut icon" href="/imagenes/uam6.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <header class="logo-principal">
+    <a href="/"><img src="/imagenes/uam.svg" width="300" height="70" alt="Logo UAM"></a>
+  </header>
+
+  <main class="contenedor">
+    <!-- Enlace a proyecto de integración -->
+    <div class="enlace-superior">
+      <a href="/proyectos_integracion/registrar" class="boton-secundario-enlace">
+        + Registrar Proyecto de Integración
+      </a>
+    </div>
+
+    <h1 class="titulo">Registro Proyecto de Investigación</h1>
+
+    <form class="formularioAgregar sombra-login" method="POST" action="/proyectos_investigacion/registrar" autocomplete="off">
+      <fieldset>
+        <legend class="instruccion">Complete los siguientes campos</legend>
+
+        <div class="seccion">
+          <h2 class="subtitulo-seccion">Datos del Proyecto</h2>
+
+          <div class="campo"><p>Título:</p><input class="caja" type="text" name="titulo" required></div>
+          <div class="campo"><p>Clave:</p><input class="caja" type="text" name="clave" required></div>
+          <div class="campo"><p>Acuerdo:</p><input class="caja" type="text" name="acuerdo" required></div>
+
+          <div class="fila-horizontal">
+            <div class="campo"><p>Fecha de inicio:</p><input class="caja" type="date" name="fecha_inicio" required></div>
+            <div class="campo"><p>Fecha de fin:</p><input class="caja" type="date" name="fecha_fin" required></div>
+          </div>
+
+          <div class="campo"><p>PIA:</p><input class="caja" type="text" name="pia" required></div>
+          <div class="campo"><p>Objetivo general:</p><textarea class="caja" name="objetivo_gral" rows="3" required></textarea></div>
+        </div>
+
+        <div class="seccion">
+          <h2 class="subtitulo-seccion">Objetivos Particulares</h2>
+          <div id="contenedor-objetivos"></div>
+          <button type="button" id="btnAddObjetivo" class="boton-secundario">+ Agregar Objetivo</button>
+        </div>
+
+        <div class="seccion">
+          <h2 class="subtitulo-seccion">Profesores Participantes</h2>
+          <div id="contenedor-profesores"></div>
+          <button type="button" id="btnAddProfesor" class="boton-secundario">+ Agregar Profesor</button>
+        </div>
+
+        <div class="formulario-boton">
+          <input class="boton-enviar" type="submit" value="Registrar Proyecto">
+        </div>
+      </fieldset>
+    </form>
+  </main>
+
+  <template id="tplObjetivo">
+    <div class="campo fila-horizontal">
+      <input class="caja" type="text" name="objetivos_particulares[]" placeholder="Objetivo particular" required>
+      <button type="button" class="boton boton-eliminar">🗑</button>
+    </div>
+  </template>
+
+  <template id="tplProfesor">
+    <div class="campo fila-horizontal">
+      <select class="caja" name="id_profesores[]" required>
+        <option value="">Seleccione un profesor</option>
+        <% profesores.forEach(profesor => { %>
+          <option value="<%= profesor.id_profesor %>">
+            <%= profesor.nombre %> <%= profesor.apellico_paterno %> <%= profesor.apellido_materno %>
+          </option>
+        <% }); %>
+      </select>
+
+      <select class="caja" name="id_roles_profesor[]" required>
+        <option value="">Rol</option>
+        <option value="3">Autor</option>
+        <option value="4">Coautor</option>
+      </select>
+
+      <button type="button" class="boton boton-eliminar">🗑</button>
+    </div>
+  </template>
+
+  <script src="/js/registro_proyecto_investigacion.js"></script>
+</body>
+</html>

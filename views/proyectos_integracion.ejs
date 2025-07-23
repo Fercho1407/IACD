@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/estilos/Estilo.css" type="text/css">
+        <link rel="shortcut icon" href="/iamgenes/uam6.png">
+        <!-- Estilos de DataTables -->
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
+        
+        <!-- jQuery (necesario para DataTables) -->
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        
+        <!-- Script de DataTables -->
+        <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+        
+
+        <title>Proyectos de integracion</title>
+    </head>
+    <body>
+         <header>
+            <div class="logo-principal">
+                 <a href="/proyectos_integracion"><img src="/imagenes/uam.svg" width="300" height="70"></a>
+            </div>
+            
+            </head>
+        </header>
+            <div class="navegacion">
+                <nav class="navegacion-principal">  
+                    <a href="/index.html">IACD</a>
+                    <a href="/proyectos_investigacion">Proyectos Investigacion</a>
+                    <a href="/login">Registar proyectos</a>
+                </nav>
+            </div>
+        <h2 class="titulo-secundario">Proyectos Integracion</h2>
+
+
+        
+
+
+        
+        <div>
+            <table class="tabla-contenido sombra" id="tabla-proyectos">
+                <thead>
+                    <tr>
+                   <th>Autor</th> <th>Asesor</th> <th>Titulo</th> <th>Ver trabajo</th> <th>Area</th> <th>Año</th>
+                </tr></thead>
+                <tbody class="estilo">
+                    
+                    <% if ( proyectos_integracion && proyectos_integracion.length > 0) { %>
+                        <% proyectos_integracion.forEach(p => { %>
+                          <tr>
+                            <td><%= p.autor %></td>
+                            <td><%= p.asesor %></td>
+                            <td><%= p.titulo %></td>
+                            <td><a href="<%= p.path_proyecto %>" target="_blank""><img src="/imagenes/file.png" width="35" height="35" alt="Descripción de la imagen"></a></td>
+                            <td><%= p.area %></td>
+                            <td><%= p.anio_realizacion %></td>
+                            <% %>
+                          </tr>
+                        <% }); %>
+                      <% } else { %>
+                        <tr>
+                          <td colspan="5">No hay proyectos registrados.</td>
+                        </tr>
+                      <% } %>
+
+            
+            
+                </tbody>
+            </table>
+        </div>
+           <footer>
+            <p>Todos los derechos reservados. Universidad Autonoma Metropolitana</p>
+        </footer>
+        <script>
+          $(document).ready(function() {
+            $('#tabla-proyectos').DataTable({
+              "language": {
+                "search": "Buscar:",
+                "lengthMenu": "Mostrar _MENU_ registros por página",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
+                "infoEmpty": "Mostrando 0 a 0 de 0 registros",
+                "infoFiltered": "(filtrado de _MAX_ registros)",
+                "paginate": {
+                  "previous": "Anterior",
+                  "next": "Siguiente"
+                }
+              }
+            });
+          });
+        </script>
+    </body>
+    
+</html>

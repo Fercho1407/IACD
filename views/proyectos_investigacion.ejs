@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/estilos/Estilo.css" type="text/css">
+        <link rel="shortcut icon" href="/iamgenes/uam6.png">
+        <!-- Estilos de DataTables -->
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
+        
+        <!-- jQuery (necesario para DataTables) -->
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        
+        <!-- Script de DataTables -->
+        <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+        
+
+        <title>Proyectos de Investigacion</title>
+    </head>
+    <body>
+         <header>
+            <div class="logo-principal">
+                 <a href="/proyectos_investigacion"><img src="/imagenes/uam.svg" width="300" height="70"></a>
+            </div>
+            
+            </head>
+        </header>
+            <div class="navegacion">
+                <nav class="navegacion-principal">  
+                    <a href="/index.html">IACD</a>
+                    <a href="/proyectos_integracion">Proyectos de Integracion</a>
+                    <a href="/login">Registar proyectos</a>
+                </nav>
+            </div>
+        <h2 class="titulo-secundario">Proyectos de Investigacion</h2>
+
+
+        
+
+
+        
+        <div>
+            <table class="tabla-contenido sombra" id="tabla-proyectos">
+                <thead>
+                    <tr>
+                   <th>Titulo</th> <th>Clave</th> <th>Fecha de Inicio</th> <th>Fecha de Finalizacion</th> <th>Objetivo General</th>
+                </tr></thead>
+                <tbody class="estilo">
+                    
+                    <% if ( proyectos_investigacion && proyectos_investigacion.length > 0) { %>
+                        <% proyectos_investigacion.forEach(p => { %>
+                          <tr>
+                            <td><%= p.titulo %></td>
+                            <td><%= p.clave %></td>
+                            <td><a><%= new Date(p.fecha_inicio).toLocaleDateString("es-MX")%></a></td>
+                            <td><%= new Date(p.fecha_fin).toLocaleDateString("es-MX") %></td>
+                            <td><%= p.objetivo_gral %></td>
+                            <% %>
+                          </tr>
+                        <% }); %>
+                      <% } else { %>
+                        <tr>
+                          <td colspan="5">No hay proyectos registrados.</td>
+                        </tr>
+                      <% } %>
+
+            
+            
+                </tbody>
+            </table>
+        </div>
+           <footer>
+            <p>Todos los derechos reservados. Universidad Autonoma Metropolitana</p>
+        </footer>
+        <script>
+          $(document).ready(function() {
+            $('#tabla-proyectos').DataTable({
+              "language": {
+                "search": "Buscar:",
+                "lengthMenu": "Mostrar _MENU_ registros por página",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
+                "infoEmpty": "Mostrando 0 a 0 de 0 registros",
+                "infoFiltered": "(filtrado de _MAX_ registros)",
+                "paginate": {
+                  "previous": "Anterior",
+                  "next": "Siguiente"
+                }
+              }
+            });
+          });
+        </script>
+    </body>
+    
+</html>

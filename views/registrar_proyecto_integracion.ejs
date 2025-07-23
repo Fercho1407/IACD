@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registrar Proyecto de Integración</title>
+  <link rel="stylesheet" href="/estilos/Estilos.css">
+  <link rel="shortcut icon" href="/imagenes/uam6.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <header class="logo-principal">
+    <a href="/"><img src="/imagenes/uam.svg" width="300" height="70" alt="Logo UAM"></a>
+  </header>
+
+  <main class="contenedor">
+
+    <!-- Enlace a registrar proyecto de investigación -->
+    <div class="enlace-superior">
+      <a href="/proyectos_investigacion/registrar" class="boton-secundario-enlace">
+        + Registrar Proyecto de Investigación
+      </a>
+    </div>
+
+    <h1 class="titulo">Registro Proyecto de Integración</h1>
+
+    <form class="formularioAgregar sombra-login" method="POST" action="/proyectos_integracion/registrar" autocomplete="off" enctype="multipart/form-data">
+      <fieldset>
+        <legend class="instruccion">Complete los siguientes campos</legend>
+
+        <!-- SECCIÓN PROFESORES -->
+        <div class="seccion">
+          <h2 class="subtitulo-seccion">Sección Profesores</h2>
+
+          <!-- Asesor -->
+          <div class="fila-horizontal">
+            <div class="campo">
+              <p>Profesor Asesor:</p>
+              <select class="caja" name="id_profesor" required>
+                <option value="">Seleccione un profesor</option>
+                <% profesores.forEach(profesor => { %>
+                  <option value="<%= profesor.id_profesor %>">
+                    <%= profesor.nombre %> <%= profesor.apellico_paterno %> <%= profesor.apellido_materno %>
+                  </option>
+                <% }); %>
+              </select>
+            </div>
+
+            <div class="campo">
+              <p>Agregar nuevo:</p>
+              <a href="/profesores/registrar" class="boton-secundario">+ Agregar Profesor</a>
+            </div>
+          </div>
+
+          <!-- Coasesor -->
+          <div class="campo">
+            <p>Profesor Coasesor:</p>
+            <select class="caja" name="id_coasesor">
+              <option value="">(Sin coasesor)</option>
+              <% profesores.forEach(profesor => { %>
+                <option value="<%= profesor.id_profesor %>">
+                  <%= profesor.nombre %> <%= profesor.apellido_paterno %> <%= profesor.apellido_materno %>
+                </option>
+              <% }); %>
+            </select>
+          </div>
+        </div>
+
+        <!--SECCIÓN ALUMNO -->
+        <div class="seccion">
+          <h2 class="subtitulo-seccion">Sección Alumno</h2>
+
+          <div class="fila-horizontal">
+            <div class="campo">
+              <p>Matrícula:</p>
+              <input class="caja" type="text" name="matricula" required>
+            </div>
+            <div class="campo">
+              <p>Nombre:</p>
+              <input class="caja" type="text" name="nombre" required>
+            </div>
+          </div>
+
+          <div class="fila-horizontal">
+            <div class="campo">
+              <p>Apellido paterno:</p>
+              <input class="caja" type="text" name="apellido_paterno" required>
+            </div>
+            <div class="campo">
+              <p>Apellido materno:</p>
+              <input class="caja" type="text" name="apellido_materno" required>
+            </div>
+          </div>
+
+          <div class="campo">
+            <p>Licenciatura:</p>
+            <select class="caja" name="licenciatura" required>
+              <option value="">Seleccione una opción</option>
+              <option value="1">Ingeniería Ambiental</option>
+              <option value="2">Ingeniería Civil</option>
+              <option value="3">Ingeniería en Computación</option>
+              <option value="4">Ingeniería Eléctrica</option>
+              <option value="5">Ingeniería Electrónica</option>
+              <option value="6">Ingeniería Física</option>
+              <option value="7">Ingeniería Industrial</option>
+              <option value="8">Ingeniería Mecánica</option>
+              <option value="9">Ingeniería Metalúrgica</option>
+              <option value="10">Ingeniería Química</option>
+              <option value="11">CYAD</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- SECCIÓN PROYECTO -->
+        <div class="seccion">
+          <h2 class="subtitulo-seccion">Sección Proyecto</h2>
+
+          <div class="campo">
+            <p>Título del Proyecto:</p>
+            <input class="caja" type="text" name="titulo" required>
+          </div>
+
+          <div class="fila-horizontal">
+            <div class="campo">
+              <p>Año de Realización:</p>
+              <input class="caja" type="number" name="anio_realizacion" min="2000" max="2099" required>
+            </div>
+            <div class="campo">
+              <p>Número de Trimestres:</p>
+              <input class="caja" type="number" name="numero_trimestres" min="1" required>
+            </div>
+          </div>
+
+          <div class="campo">
+            <p>Descripción:</p>
+            <textarea class="caja" name="descripcion" rows="3" required></textarea>
+          </div>
+
+          <div class="campo">
+            <p>Objetivo General:</p>
+            <textarea class="caja" name="objetivo_gral" rows="3" required></textarea>
+          </div>
+
+          <div class="campo">
+            <p>Archivo del Proyecto:</p>
+            <input class="caja" type="file" name="path_proyecto" accept=".pdf,.doc,.docx" required>
+          </div>
+
+          <div class="fila-horizontal">
+            <div class="campo">
+              <p>Trimestre:</p>
+              <select class="caja" name="id_trimestre" required>
+                <option value="">Seleccione una opción</option>
+                <option value="1">P</option>
+                <option value="2">O</option>
+                <option value="3">I</option>
+              </select>
+            </div>
+
+            <div class="campo">
+              <p>Área:</p>
+              <select class="caja" name="id_area" required>
+                <option value="">Seleccione una opción</option>
+                <option value="1">Programación Escritorio</option>
+                <option value="2">Aplicaciones Web</option>
+                <option value="3">Robótica</option>
+                <option value="4">Mecánica</option>
+                <option value="5">Electrónica</option>
+                <option value="6">Redes</option>
+                <option value="7">Aplicación Móvil</option>
+                <option value="8">CYAD</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="campo">
+            <p>Modo del Proyecto:</p>
+            <select class="caja" name="id_modo" required>
+              <option value="">Seleccione una opción</option>
+              <option value="1">Proyecto Tecnológico</option>
+              <option value="2">Proyecto de Investigación</option>
+              <option value="3">Estancia Profesional</option>
+              <option value="4">Experiencia Profesional</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <p>Estado del Proyecto:</p>
+            <select class="caja" name="id_estado_proyecto" required>
+              <option value="">Seleccione una opción</option>
+              <option value="1">Propuesto</option>
+              <option value="2">En desarrollo</option>
+              <option value="3">Abandonado</option>
+              <option value="4">Finalizado</option>
+              <option value="5">Prórroga</option>
+              <option value="6">Cancelado</option>
+              <option value="7">Espera de confirmación</option>
+              <option value="8">Notificado</option>
+              <option value="9">Aceptado</option>
+              <option value="10">Dado de baja</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- BOTÓN DE ENVÍO -->
+        <div class="formulario-boton">
+          <input class="boton-enviar" type="submit" value="Registrar">
+        </div>
+      </fieldset>

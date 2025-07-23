@@ -1,0 +1,788 @@
+html {
+    line-height: 1.15;  
+    -webkit-text-size-adjust: 100%;
+    font-size: 70%;
+  }
+
+:root{
+     --blanco: #FFFFFF;
+    --negro: #212121;
+    --primario: #FFC107;
+    --secundario: #0097A7;
+    --gris-claro: #F3F3F3;
+    --gris: #D7D7D7;
+    /* --rojo: #B72223;*/
+    --rojo: #CD032E;
+}
+
+
+
+.logo-principal{
+    text-align: center;
+}
+
+h1{
+    font-size: 3.8rem;
+    text-align: center;
+}
+
+h2{
+   font-size: 2rem;
+    text-align: center;
+    color: var(--rojo);
+}
+span{
+    text-transform: lowercase;
+}
+
+
+body{
+    /*font-size: 16px;*/
+    
+    font-family: 'Krub', sans-serif;
+    margin: 0;
+    /*background-image: linear-gradient(to top,#DFE9F3 0%, var(--blanco) 100%);*/
+}
+
+
+/*CLASES GENERICAS*/
+
+.estilo a{
+    text-decoration: none;
+    color:#212121;
+    text-align: center;
+}
+
+.estilo a:hover{
+    text-decoration-line: underline;
+    color: var(--rojo);
+}
+
+.navegacion{
+    background-color: var(--rojo);
+    
+}
+
+.navegacion-principal{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 120rem;
+    margin: 0 auto;
+    
+}
+
+.navegacion-principal a{
+    display: block;
+    text-align: center;
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 1.7rem;
+    font-weight: 700;
+    padding: 2rem;
+}
+
+
+
+    
+
+
+.navegacion-principal-completa{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.navegacion-principal-completa a{
+    display: block;
+    text-align: center;
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1rem;
+}
+
+.navegacion-docentes a{
+   
+    text-align: center;
+    color: var(--negro);
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+   
+}
+
+.navegacion-docentes p{
+    padding: 0.01rem;
+}
+
+
+.navegacion-principal a:hover{
+    background-color: var(--blanco);
+    color: var(--negro);
+}
+
+.navegacion-principal-completa a:hover{
+    background-color: var(--blanco);
+    color: var(--negro);
+}
+
+
+.portada{
+    background-image: url("/SistemaDeProyectos/imagenes/piedras.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50rem;
+    padding: 2rem;
+    width: auto;
+    background-position: center;
+    position: relative;
+    border-radius: 2rem;
+    background-size: 150%;
+    /* MODIFICACION MOVIMIENTO */
+    animation: movimiento 10s infinite linear alternate;
+    
+}
+
+@keyframes movimiento{
+    from{
+        background-position: bottom left;
+    }to{
+        background-position: top right;
+    }
+}
+
+
+
+/*FIN DE MOVIMIENTO*/
+
+
+.contorno{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.portada-contenido{
+    position: absolute;
+    background-color: rgba(0,0,0,0.6);
+    bottom: 0rem;
+    top: 0rem;
+    right: 0rem;
+    left:0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 2rem;
+    
+}
+
+.portada-informacion{
+    margin: 16rem;
+    text-align: center;
+    
+}
+.portada-informacion h2{
+    color:var(--blanco);
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+    font-size: 3rem;
+}
+
+
+
+
+
+.boton{
+    background-color: var(--rojo);
+    color:var(--blanco);
+    padding: 1rem 3rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 2rem;
+    text-align: center;
+    border: none;
+    
+}
+
+.boton hover{
+    cursor: pointer;
+}
+.boton-enviar{
+    background-color: var(--blanco);
+    color: var(--rojo);
+    padding: 1rem 3rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 2rem;
+    width: 100%;
+    text-align: center;
+    border: none;
+}
+
+.boton-agregar{
+    margin-top: 5rem;
+    text-align: center;
+}
+
+
+
+
+.boton-opcion{
+    margin-top: 4rem;
+}
+
+.boton-editar{
+    background-color: var(--rojo);
+    color:var(--blanco);
+    padding: 1rem 3rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 2rem;
+    width: 100%;
+    text-align: center;
+    border: none;
+}
+
+.boton-editar:hover{
+     cursor: pointer;
+}
+
+.boton-enviar:hover{
+    cursor: pointer;
+}
+
+
+
+.formulario-boton{
+    margin-top: 6rem;
+    text-align: center;
+}
+
+.formulario-boton-agregar{
+    margin-top: 3rem;
+    text-align: center;
+}
+.boton:hover{
+    color: var(--blanco);
+    background-color: var(--negro);
+}
+
+.boton-enviar:hover{
+    color: var(--blanco);
+    background-color: var(--negro);
+}
+
+.boton-proyecto{
+    cursor: pointer;
+}
+
+.formularioLogin{
+    background-color: var(--rojo);
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 2rem;
+    width: 40rem;
+    height: 40rem;
+    margin-bottom: 5rem;
+}
+
+@media (max-width:768px){
+       .formularioLogin{
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 2rem;
+    width: 30rem;
+    height: 35rem;
+    margin-bottom: 5rem;
+}
+}
+
+.formularioAgregar{
+    background-color: var(--rojo);
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 2rem;
+    width: 80rem;
+    min-height: 98rem;
+}
+
+@media (max-width:768px){
+    .formularioAgregar{
+    width: 30rem;
+    height: 190rem;
+}
+
+.contenedor-campos-primarios{
+    display: contents;
+}
+}
+
+
+.formularioActualizar{
+    background-color: var(--rojo);
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 2rem;
+    width: 80rem;
+    height: 105rem;
+}
+
+@media (max-width:768px){
+    .formularioActualizar{
+    width: 30rem;
+    height: 198rem;
+}
+}
+
+.formulario-propuesta-tecnologico{
+     background-color: var(--rojo);
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 2rem;
+    width: 80rem;
+    height: 50rem;
+}
+
+
+
+.formularioLogin fieldset{
+    border: none;
+}
+
+.formularioLogin legend{
+    color:var(--blanco);
+    font-size: 2rem;
+    /*text-align: center;*/
+    padding-bottom: 2rem;
+    /*text-transform: uppercase;*/
+    font-weight: 700;
+}
+
+.formularioLogin p{
+    color: var(--blanco);
+    font-size: 2rem;
+}
+
+.instruccion{
+    text-align: center;
+}
+.instruccion-intermedia{
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.campo{
+    text-align: center;
+    margin-bottom: 2rem;
+    
+}
+
+.campo input,select,textarea{
+    border: none;
+    text-align: center;
+    font-family: 'Krub', sans-serif;
+
+}
+
+
+.caja{
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+
+    
+
+.contenedor{
+    max-width: 120rem;
+     margin: 0 auto;
+}
+
+.contenedor-campos-primarios{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    
+}
+
+.contenedor-campos-secundarios{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+}
+
+.contenedor-campos-terciarios{
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.bloque-informacion{
+        display:grid;
+        justify-content: center;
+        grid:45rem/ 1fr 1fr 1fr;
+        column-gap: 3rem;
+  }
+
+.bloque-informacion-docentes{
+        display:grid;
+        justify-content: center;
+        grid: 140rem/ 1fr 0.4fr ;
+        column-gap: 2rem;
+  } 
+  
+.bloque-informacion-docentes-1{
+        display:grid;
+        justify-content: center;
+        grid: 155rem/ 1fr 0.4fr ;
+        column-gap: 2rem;
+  } 
+
+.bloque-opciones-proyecto{
+    display: flex;
+    flex-direction: column;
+    height: 29rem;
+    max-width: 60%;
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+
+.informacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.informacion h3{
+    color: var(--blanco);
+    font-weight: normal;
+    font-size: 2.5rem;
+    
+}
+
+.informacion p{
+    line-height: 2;
+    text-align: justify;
+    font-size: 1.55rem;
+}
+
+.informacion-docentes{
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+}
+
+.informacion-docentes h3{
+    color: var(--rojo);
+    font-weight: normal;
+    font-size: 3rem;
+    align-items: center;
+    text-align: center;
+}
+
+.informacion-docentes p{
+    line-height: 2;
+    align-items: center;
+    font-size: 1.3rem;
+    text-align: justify;
+}
+
+.informacion-docentes-texto{
+    text-align: left;
+}
+.informacion-docentes-centrada{
+    text-align: center;
+}
+
+.informacion-docentes-centrada p{
+    text-align: center;
+}
+
+.sombra{
+    box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.48);
+background-color: var(--blanco);
+    padding-left: 4rem;
+    padding-right: 4rem;
+    border-radius: 2rem;
+}
+
+.sombra-principal{
+    box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.48);
+background-color: var(--blanco);
+    padding-left: 4rem;
+    padding-right: 4rem;
+    border-radius: 2rem;
+    background-color: var(--rojo);
+    color: var(--blanco);
+}
+
+.sombra-login{
+    box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.48);
+background-color: var(--rojo);
+ border-radius: 2rem;
+}
+
+.tabla-contenido thead{
+    background-color: var(--rojo);
+    color: var(--blanco);
+    font-size: 1.8rem;
+    
+}
+.tabla-contenido tbody{
+    background-color: var(--blanco);
+    font-size: 1.5rem;
+}
+.tabla-contenido{
+    width: 90rem;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-radius: 1rem 1rem 1rem 1rem;
+    overflow: hidden;
+}
+
+.tabla-contenido th,td{
+    /*border: solid 0.1rem black;*/
+    padding: 1rem;
+    text-align: center;
+    
+}
+
+.tabla-contenido tr:nth-child(even){
+    background: var(--gris);
+}
+
+
+/*Apartado de proyectos FINALIZADOS*/
+
+
+.tecnologico-segundo-alumno{
+    display: none;
+}
+
+
+
+
+footer{
+    text-align: center;
+    text-decoration: none;
+    margin-top: 4rem;
+    font-size: 1.3rem;
+}
+
+@media (max-width:768px){
+        .navegacion-principal{
+    display:block;
+    text-align: center;
+    width: auto;
+}
+
+    .navegacion-principal a{
+    width: auto;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 2rem;
+}
+
+.logo-principal img{
+    width: 27rem;
+    height: 12rem;
+}
+
+.tabla-contenido{
+    display: flex;
+}
+
+.portada-informacion h2{
+    font-size: 5rem;
+    padding-bottom: 10rem;
+}
+
+
+.portada-informacion a{
+    font-size: 2rem;
+    padding: 5rem;
+}
+
+.bloque-informacion{
+        display: block;
+    }
+    
+    .bloque-informacion section h3{
+        font-size: 2rem;
+    }
+    
+    .bloque-informacion section p{
+        font-size: 1.5rem;
+    }
+    
+    .icon-tabler-license svg{
+        width: 100rem;
+    }
+
+    .tabla-contenido td {
+        font-size: 3rem;
+    }
+    
+    .tabla-contenido th {
+        font-size: 3rem;
+    }
+    
+    
+    }
+
+    .logo-principal img{
+        padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    }
+    
+   
+@media (max-width:768px){
+        .logo-principal img{
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+}
+    }
+    
+   
+    @media(max-width:768px){
+    .portada{
+        width: auto;
+        height: 120rem;
+        background-size: 700%;
+    }
+    
+    .contorno{
+        margin-top: 0;
+        margin-bottom: 0;
+        max-width: none;
+    }
+    
+    .contenedor{
+        border-radius: 0rem;
+        max-width: none;
+    }
+    
+    .portada-contenido{
+        border-radius: 0;
+    }
+    
+    .portada{
+         border-radius: 0rem;
+    }
+    
+    .tabla-contenido{
+        display: contents;
+    }
+    
+    .tabla-contenido td{
+        font-size: 1.5rem;
+    }
+     .tabla-contenido th{
+        font-size: 1.5rem;
+    }
+    
+    .titulo-secundario{
+        margin-top: 10rem;
+    }
+}
+    
+    
+    /***CREDITOS*****/
+    
+    .portada-contenido .creditos a{
+        margin-top: 20rem;
+        margin-left: 105rem;
+        color: var(--blanco);
+    }
+    
+    .portada-contenido .creditos{
+        margin-top: 5rem;
+        
+    }
+    
+    @media (max-width:768px){
+        .portada-contenido .creditos a{
+            margin-top: 0rem;
+        margin-left: 0rem;
+        }
+        
+        .portada-contenido .creditos{
+        margin-top: 45rem;
+    }
+
+    .contenedor-campos-primarios{
+    display: contents;
+    }
+
+    .contenedor-campos-secundarios{
+    display: contents;
+    }
+    }
+
+/* Estilo para la tabla */
+#tabla-proyectos {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #d3d3d3; /* Línea suave de borde */
+  }
+  
+  #tabla-proyectos th, #tabla-proyectos td {
+    padding: 8px 12px;
+    text-align: left;
+    font-size: 14px;
+  }
+  
+  /* Estilo de fondo alternado para filas */
+  #tabla-proyectos tr:nth-child(even) {
+    background-color: rgb(179, 179, 179); /* Gris claro para las filas pares */
+  }
+  
+  #tabla-proyectos tr:nth-child(odd) {
+    background-color: #ffffff; /* Blanco para las filas impares */
+  }
+  
+  #tabla-proyectos th {
+    background-color: red; /* Color azul para el encabezado */
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* Bordes redondeados para la tabla */
+  #tabla-proyectos {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  
+  /* Estilo del campo de búsqueda */
+  .dataTables_filter input {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left: 10px;
+  }
+
+  .formularioAgregar .campo p {
+    font-size: 1.7rem;         /* ← Tamaño de letra más grande */
+    color: var(--black);    /* ← Contraste si fondo es rojo */
+    font-weight: bold;       /* ← Más presencia visual (opcional) */
+    margin-bottom: 1rem;     /* ← Espacio entre el texto y el campo */
+}
+
+.instruccion {
+    font-size: 1.7rem;     /* Tamaño más grande */
+    font-weight: bold;     /* Opcional: texto más marcado */
+    color: var(--black);  /* Para que contraste con el fondo */
+    text-align: center;
+    margin-bottom: 2rem;
+}

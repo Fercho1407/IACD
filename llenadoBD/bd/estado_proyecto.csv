@@ -1,0 +1,11 @@
+idestado_proyecto;estado
+1;Propuesto
+2;"En desarrollo"
+3;Abandonado
+4;Finalizado
+5;Prorroga
+6;Cancelado
+7;"Espera de confirmacion"
+8;Notificado
+9;Aceptado
+10;"Dado de Baja"

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registrar Profesor</title>
+  <link rel="stylesheet" href="/estilos/Estilos.css">
+  <link rel="shortcut icon" href="/imagenes/uam6.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <header class="logo-principal">
+    <a href="/"><img src="/imagenes/uam.svg" width="300" height="70" alt="Logo UAM"></a>
+  </header>
+
+  <main class="contenedor">
+    <h1 class="titulo">Registrar Nuevo Profesor</h1>
+
+    <form class="formularioAgregar sombra-login" method="POST" action="/profesores/registrar" autocomplete="off">
+      <fieldset>
+        <legend class="instruccion">Complete los datos del profesor</legend>
+
+        <!--Sección Datos del Profesor -->
+        <div class="seccion">
+          <h2 class="subtitulo-seccion">Sección Datos del Profesor</h2>
+
+          <div class="fila-horizontal">
+            <div class="campo">
+              <p>Número Económico:</p>
+              <input class="caja" type="text" name="num_conomico" placeholder="Ej. 12345">
+            </div>
+
+            <div class="campo">
+              <p>Nombre(s):</p>
+              <input class="caja" type="text" name="nombre" placeholder="Nombre del profesor" required>
+            </div>
+          </div>
+
+          <div class="fila-horizontal">
+            <div class="campo">
+              <p>Apellido Paterno:</p>
+              <input class="caja" type="text" name="apellico_paterno" placeholder="Apellido paterno" required>
+            </div>
+
+            <div class="campo">
+              <p>Apellido Materno:</p>
+              <input class="caja" type="text" name="apellido_materno" placeholder="Apellido materno" required>
+            </div>
+          </div>
+
+          <div class="fila-horizontal">
+            <div class="campo">
+              <p>Teléfono:</p>
+              <input class="caja" type="tel" name="telefono" placeholder="Ej. 5551234567">
+            </div>
+
+            <div class="campo">
+              <p>Correo Electrónico:</p>
+              <input class="caja" type="email" name="correo" placeholder="correo@ejemplo.com" required>
+            </div>
+          </div>
+
+          <div class="fila-horizontal">
+            <div class="campo">
+              <p>Cubículo:</p>
+              <input class="caja" type="text" name="cubiculo" placeholder="Ej. A-101">
+            </div>
+
+            <div class="campo">
+              <p>Estado:</p>
+              <select class="caja" name="id_estado" required>
+                <option value="">Seleccione estado</option>
+                <option value="1">Activo</option>
+                <option value="2">Inactivo</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botón de Envío -->
+        <div class="formulario-boton">
+          <input class="boton-enviar" type="submit" value="Registrar Profesor">
+        </div>
+      </fieldset>
+    </form>
+  </main>
+
+</body>
+</html>
